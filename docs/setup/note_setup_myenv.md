@@ -49,7 +49,11 @@ downloads:
 ```
 * generate and add SSH key
 
-10. 
+10. install utilities
+```
+scoop install coreutils
+cargo install --git https://github.com/skyline75489/exa --branch chesterliu/dev/win-support
+```
 
 # mac / linux
 1. install zsh
