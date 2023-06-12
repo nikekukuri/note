@@ -49,9 +49,15 @@ downloads:
 ```
 * generate and add SSH key
 
-10. install utilities
+10. install scoop
 ```
-scoop install coreutils
+iwr -useb get.scoop.sh | iex
+```
+
+11. install utilities
+```
+scoop install coreutils zoxide fzf
+scoop install sudo
 cargo install --git https://github.com/skyline75489/exa --branch chesterliu/dev/win-support
 ```
 
