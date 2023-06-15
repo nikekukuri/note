@@ -60,7 +60,7 @@ winget search Microsoft.PowerShell
 winget install --id Microsoft.Powershell --source winget
 winget install --id Microsoft.Powershell.Preview --source winget
 ```
-Windows Terminal 上でPowerShell7がたちあがるように設定
+When you run new terminal on Windows Terminal, always run PowerShell7
 `C:\Program Files\PowerShell\7-preview\pwsh.exe`
 
 12. oh-my-posh install
