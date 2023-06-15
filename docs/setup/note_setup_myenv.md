@@ -54,11 +54,27 @@ downloads:
 iwr -useb get.scoop.sh | iex
 ```
 
-11. install utilities
+11. install PowerShell v7
 ```
-scoop install coreutils zoxide fzf
+winget search Microsoft.PowerShell
+winget install --id Microsoft.Powershell --source winget
+winget install --id Microsoft.Powershell.Preview --source winget
+```
+Windows Terminal 上でPowerShell7がたちあがるように設定
+`C:\Program Files\PowerShell\7-preview\pwsh.exe`
+
+12. oh-my-posh install
+```
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
+
+12. install utilities
+```
+scoop install coreutils zoxide fzf ripgrep
 scoop install sudo
 cargo install --git https://github.com/skyline75489/exa --branch chesterliu/dev/win-support
+Install-Module -Scope CurrentUser PSFzf
+Install-Module posh-git -Scope CurrentUser
 ```
 
 # mac / linux
