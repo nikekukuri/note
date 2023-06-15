@@ -70,7 +70,8 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 
 12. install utilities
 ```
-scoop install coreutils zoxide fzf ripgrep
+scoop install zoxide fzf ripgrep
+scoop install uutils-coreutils
 scoop install sudo
 cargo install --git https://github.com/skyline75489/exa --branch chesterliu/dev/win-support
 Install-Module -Scope CurrentUser PSFzf
