@@ -70,9 +70,10 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 
 12. install utilities
 ```
-scoop install zoxide fzf ripgrep
+scoop install zoxide fzf ripgrep fd gzip less tar gawk sed
 scoop install uutils-coreutils
 scoop install sudo
+scoop install nvs
 cargo install --git https://github.com/skyline75489/exa --branch chesterliu/dev/win-support
 Install-Module -Scope CurrentUser PSFzf
 Install-Module posh-git -Scope CurrentUser
