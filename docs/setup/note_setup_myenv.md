@@ -70,7 +70,7 @@ winget install JanDeDobbeleer.OhMyPosh -s winget
 
 12. install utilities
 ```
-scoop install zoxide fzf ripgrep fd gzip less tar gawk sed
+scoop install zoxide fzf ripgrep fd gzip less tar gawk sed nodejs unzip gcc
 scoop install uutils-coreutils
 scoop install sudo
 scoop install nvs
