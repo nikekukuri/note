@@ -74,6 +74,8 @@ scoop install zoxide fzf ripgrep fd gzip less tar gawk sed nodejs unzip gcc
 scoop install uutils-coreutils
 scoop install sudo
 scoop install nvs
+scoop bucket add github-gh https://github.com/cli/scoop-gh.git
+scoop install gh
 cargo install --git https://github.com/skyline75489/exa --branch chesterliu/dev/win-support
 Install-Module -Scope CurrentUser PSFzf
 Install-Module posh-git -Scope CurrentUser
