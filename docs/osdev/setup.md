@@ -62,3 +62,45 @@ error: could not compile `uefi` (lib) due to previous error
 
 RustのWorkspaceの作りかたはこれ
 https://doc.rust-jp.rs/book-ja/ch14-03-cargo-workspaces.html
+
+<ブートローダービルド問題>
+edk2-stable202102
+
+```
+build.py...
+ : error 7000: Failed to execute command
+        make tbuild [/home/guy/edk2/Build/EmulatorX64/DEBUG_CLANG38/X64/EmulatorPkg/Unix/Host/Host]
+/home/guy/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/build/build.py:500: DeprecationWarning: isSet() is deprecated, use is_set() instead
+  if BuildTask._ErrorFlag.isSet():
+/home/guy/edk2/BaseTools/BinWrappers/PosixLike/../../Source/Python/build/build.py:505: DeprecationWarning: getName() is deprecated, get the name attribute instead
+  EdkLogger.debug(EdkLogger.DEBUG_8, "Threads [%s]" % ", ".join(Th.getName() for Th in threading.enumerate()))
+
+
+build.py...
+ : error F002: Failed to build module
+        /home/guy/edk2/EmulatorPkg/Unix/Host/Host.inf [X64, CLANG38, DEBUG]
+
+- Failed -
+Build end time: 10:02:06, Jul.28 2023
+Build total time: 00:00:29
+```
+edk2-stable202208
+↑と同じエラー
+https://github.com/uchan-nos/os-from-zero/issues/97
+を試してみたが、できず。
+
+以下の対応忘れていた。。やっとビルドができた
+ - ACTIVE_PLATFORM       = EmulatorPkg/EmulatorPkg.dsc
+ + ACTIVE_PLATFORM       = MikanLoaderPkg/MikanLoaderPkg.dsc
+
+ - TARGET_ARCH           = IA32
+ + TARGET_ARCH           = X64
+
+ - TOOL_CHAIN_TAG        = VS2015x86
+ + TOOL_CHAIN_TAG        = CLANG38
+
+
+<カーネルのピクセル描画がされない問題>
+ld.lldに-z separate-code を追加
+
+
